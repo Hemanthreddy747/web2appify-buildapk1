@@ -100,6 +100,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
   late final WebViewController controller;
   bool isLoading = true;
   bool isAppLoading = true;
+  bool isWebViewReady = false;
 
   @override
   void initState() {
@@ -135,6 +136,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(Colors.white)
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageStarted: (String url) {
@@ -145,6 +147,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
           onPageFinished: (String url) {
             setState(() {
               isLoading = false;
+              isWebViewReady = true;
             });
           },
         ),
@@ -159,6 +162,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
   Future<void> _refreshPage() async {
     setState(() {
       isLoading = true;
+      isWebViewReady = false;
     });
     await controller.reload();
   }
@@ -199,12 +203,16 @@ class _WebViewScreenState extends State<WebViewScreen> {
     _updateOrientation(); // Update orientation on each build
 
     if (isAppLoading) {
-      return const Scaffold(body: Center(child: ThreeDotLoader()));
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: const Center(child: ThreeDotLoader()),
+      );
     }
 
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: MediaQuery.of(context).orientation == Orientation.portrait
             ? AppBar(
                 toolbarHeight: 0,
@@ -216,8 +224,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
           onRefresh: _refreshPage,
           child: Stack(
             children: [
-              WebViewWidget(controller: controller),
-              if (isLoading) const Center(child: ThreeDotLoader()),
+              if (isWebViewReady)
+                WebViewWidget(controller: controller)
+              else
+                Container(
+                  color: Colors.white,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
+              if (isLoading || !isWebViewReady)
+                Container(
+                  color: Colors.white,
+                  child: const Center(child: ThreeDotLoader()),
+                ),
             ],
           ),
         ),
