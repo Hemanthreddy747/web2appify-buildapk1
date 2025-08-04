@@ -1,0 +1,66 @@
+{
+  "buildConfig": {
+    "buildType": "release",
+    "targetPlatform": "android",
+    "minSdkVersion": 21,
+    "targetSdkVersion": 34,
+    "compileSdkVersion": 34,
+    "versionCode": 1,
+    "versionName": "1.0.0",
+    "applicationLabel": "Web2Appify1",
+    "packageName": "com.web2appify.app"
+  },
+  "webviewSettings": {
+    "url": "https://www.billingselling.com",
+    "userAgent": "Web2AppifyAgent/1.0",
+    "javaScriptEnabled": true,
+    "domStorageEnabled": true,
+    "databaseEnabled": true,
+    "cacheMode": "LOAD_DEFAULT",
+    "mixedContentMode": "COMPATIBILITY_MODE"
+  },
+  "appSettings": {
+    "theme": "light",
+    "primaryColor": "#2196F3",
+    "accentColor": "#03DAC6",
+    "statusBarStyle": "light",
+    "navigationBarStyle": "dark",
+    "fullScreen": false,
+    "immersiveMode": false,
+    "keepScreenOn": false
+  },
+  "permissions": {
+    "internet": true,
+    "camera": false,
+    "microphone": false,
+    "location": false,
+    "storage": true,
+    "vibrate": false,
+    "notifications": true
+  },
+  "features": {
+    "pushNotifications": false,
+    "analytics": false,
+    "crashReporting": false,
+    "deepLinking": false,
+    "fileUpload": true,
+    "fileDownload": true,
+    "printSupport": false
+  },
+  "security": {
+    "allowUnknownSources": false,
+    "certificatePinning": false,
+    "obfuscation": true,
+    "antiTampering": false,
+    "encryptAssets": false
+  },
+  "metadata": {
+    "configVersion": "2.0",
+    "createdDate": "2025-08-03",
+    "lastModified": "2025-08-03",
+    "modifiedBy": "buildScript",
+    "buildNumber": 1,
+    "environment": "production",
+    "notes": "Post-build modifiable configuration"
+  }
+}
