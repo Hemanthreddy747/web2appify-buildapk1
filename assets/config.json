@@ -28,6 +28,6 @@
   "exitDialogTitle": "Exit App",
   "exitDialogMessage": "Do you want to exit the app?",
   "configVersion": "1.0",
-  "lastModified": "2025-08-03",
-  "modificationComment": "Initial configuration"
+  "lastModified": "2025-08-05",
+  "modificationComment": "All strings managed in config.json for easier post-build modification"
 }

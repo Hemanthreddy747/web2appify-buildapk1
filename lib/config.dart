@@ -71,7 +71,7 @@ class AppConfig {
   factory AppConfig.fromJson(Map<String, dynamic> json) {
     return AppConfig(
       appName: json['appName'] ?? 'buildapk1',
-      applicationId: json['applicationId'] ?? 'com.buildapk1.app1',
+      applicationId: json['applicationId'] ?? 'com.buildapk1.app',
       webviewUrl: json['webviewUrl'] ?? 'https://www.web2appify.com',
       appVersion: json['appVersion'] ?? '1.0.0',
       buildNumber: json['buildNumber'] ?? '1',
@@ -86,7 +86,9 @@ class AppConfig {
       statusBarColor: json['statusBarColor'] ?? '#FFFFFF',
       navigationBarColor: json['navigationBarColor'] ?? '#000000',
       loadingMessage: json['loadingMessage'] ?? 'Loading...',
-      errorMessage: json['errorMessage'] ?? 'Failed to load content',
+      errorMessage:
+          json['errorMessage'] ??
+          'Network error. Please check your internet connection and try again.',
       offlineMessage: json['offlineMessage'] ?? 'No internet connection',
       pullToRefresh: json['pullToRefresh'] ?? true,
       zoomEnabled: json['zoomEnabled'] ?? false,
@@ -114,7 +116,7 @@ class AppConfig {
       // Return default config if file loading fails
       return AppConfig(
         appName: 'buildapk1',
-        applicationId: 'com.buildapk1.app1',
+        applicationId: 'com.buildapk1.app',
         webviewUrl: 'https://www.web2appify.com',
         appVersion: '1.0.0',
         buildNumber: '1',
@@ -129,7 +131,8 @@ class AppConfig {
         statusBarColor: '#FFFFFF',
         navigationBarColor: '#000000',
         loadingMessage: 'Loading...',
-        errorMessage: 'Failed to load content',
+        errorMessage:
+            'Network error. Please check your internet connection and try again.',
         offlineMessage: 'No internet connection',
         pullToRefresh: true,
         zoomEnabled: false,
