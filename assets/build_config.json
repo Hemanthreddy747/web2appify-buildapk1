@@ -7,8 +7,8 @@
     "compileSdkVersion": 34,
     "versionCode": 1,
     "versionName": "1.0.0",
-    "applicationLabel": "Web2Appify1",
-    "packageName": "com.web2appify.app"
+    "applicationLabel": "web2appify",
+    "packageName": "com.buildapk1.app"
   },
   "webviewSettings": {
     "url": "https://www.billingselling.com",

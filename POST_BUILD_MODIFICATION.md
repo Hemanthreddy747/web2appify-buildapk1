@@ -18,8 +18,8 @@ The `config.json` now supports extensive customization:
 
 ```json
 {
-  "appName": "Web2Appify1",
-  "applicationId": "com.web2appify.app",
+  "appName": "web2appify",
+  "applicationId": "com.buildapk1.app",
   "webviewUrl": "https://www.billingselling.com",
   "appVersion": "1.0.0",
   "buildNumber": "1",

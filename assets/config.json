@@ -1,7 +1,7 @@
 {
-  "appName": "Web2Appify3",
-  "applicationId": "com.web2appify2.app",
-  "webviewUrl": "https://www.goldreturns.in",
+  "appName": "build Apk",
+  "applicationId": "com.buildapk1.app",
+  "webviewUrl": "https://www.web2appify.com",
   "appVersion": "1.0.0",
   "buildNumber": "1",
   "allowClearCache": true,
